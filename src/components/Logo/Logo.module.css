@@ -1,0 +1,40 @@
+.logo {
+  width: 46px;
+  height: 44px;
+  padding: 0 5px;
+}
+
+.logoText {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .logoText {
+      display: block;
+    }
+
+    .logoText span {
+      color: #FC842D;
+    }
+ }
+
+ @media screen and (min-width: 1280px) {
+  .logoWrapper {
+    font-size: 24px;
+    align-items: flex-end;
+  }
+    .logo {
+      width: 70px;
+      height: 66px;
+    }
+        .logoText {
+          margin-left: -30px;
+          padding-right: 20px;
+          border-right:2px solid #E0E0E0;
+        }
+ }

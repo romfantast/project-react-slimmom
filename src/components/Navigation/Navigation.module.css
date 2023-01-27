@@ -1,0 +1,15 @@
+.navList {
+  display: flex;
+  column-gap: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9B9FAA;
+}
+
+.active {
+  color: #212121
+}
+.navLink {
+  color: #9B9FAA;
+}
+
