@@ -11,7 +11,7 @@ function CalculatorСalorieForm() {
         <form className={css.form}>
           <div className={css.calculatorForm}>
             <label>
-              Heigth*
+              Height*
               <input type="text" />
             </label>
             <label>
