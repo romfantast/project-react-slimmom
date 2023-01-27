@@ -1,53 +1,56 @@
 .formWrapper {
-    width: 610px;
-
+  max-width: 610px;
 }
 .title {
   font-size: 34px;
-      margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 .form {
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-
 }
 .calculatorForm {
-display: grid;
-gap: 20px;
-grid-template-columns: 240px 240px;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 240px 240px;
   grid-template-rows: 40px 40px 40px;
   font-size: 14px;
 }
-.calculatorForm label{
+.calculatorForm label {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
 }
-.calculatorForm .inputBlood{
+.calculatorForm .inputBlood {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
 }
 .calculatorForm .inputBlood label {
   display: flex;
- flex-direction: row;
+  flex-direction: row;
 }
 .calculatorForm .inputBlood input:disabled {
- background-color: white
+  background-color: white;
 }
-
 
 .calculatorForm .inputBlood span {
   display: flex;
- column-gap: 10px;
+  column-gap: 10px;
 }
 
-.calculatorForm input{
+.calculatorForm input {
   border: none;
-    font-size: 16px;
-  border-bottom: 1px solid #E0E0E0;
+  font-size: 16px;
+  border-bottom: 1px solid #e0e0e0;
   outline: none;
+}
+.calculatorForm .inputBlood span label {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
 }
 
 .btnSubmitFrom {
@@ -57,10 +60,10 @@ grid-template-columns: 240px 240px;
   align-self: self-end;
   color: #fff;
   letter-spacing: 0.04em;
-  
+
   font-size: 14px;
   font-weight: 700;
-  background-color: #FC842D;
+  background-color: #fc842d;
   border-radius: 30px;
   border: none;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
