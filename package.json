@@ -1,8 +1,8 @@
 {
-  "name": "react-team-project",
+  "name": "project-react-slimmom",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sergstorozhev1984.github.io/react-team-project/",
+  "homepage": "https://romfantast.github.io/project-react-slimmom/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.3",
