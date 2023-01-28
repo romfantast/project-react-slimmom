@@ -33,6 +33,7 @@ function CalculatorСalorieForm() {
     };
     console.log(userData);
     handleToggleModal();
+    //here will be dispatch(/daily-rate)
     // resetForm();
   }
 
