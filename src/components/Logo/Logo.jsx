@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import css from './Logo.module.css';
-import { NavLink } from 'react-router-dom';
 
 function Logo() {
   return (
