@@ -19,6 +19,7 @@ function CalculatorСalorieForm() {
   const handleChange = event => {
     const { name, value } = event.target;
     setValues(prev => ({ ...prev, [name]: value }));
+    console.log(values);
   };
 
   function formSubmit(evt) {
@@ -91,7 +92,7 @@ function CalculatorСalorieForm() {
                   <input
                     type="radio"
                     value="1"
-                    name="blood"
+                    name="bloodType"
                     onChange={handleChange}
                   />
                   1
@@ -100,7 +101,7 @@ function CalculatorСalorieForm() {
                   <input
                     type="radio"
                     value="2"
-                    name="blood"
+                    name="bloodType"
                     onChange={handleChange}
                   />
                   2
@@ -109,7 +110,7 @@ function CalculatorСalorieForm() {
                   <input
                     type="radio"
                     value="3"
-                    name="blood"
+                    name="bloodType"
                     onChange={handleChange}
                   />
                   3
@@ -118,7 +119,7 @@ function CalculatorСalorieForm() {
                   <input
                     type="radio"
                     value="4"
-                    name="blood"
+                    name="bloodType"
                     onChange={handleChange}
                   />
                   4
