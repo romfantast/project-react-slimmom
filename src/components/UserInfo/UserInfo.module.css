@@ -1,0 +1,12 @@
+.userInfo {
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+}
+.btnExit {
+  background-color: transparent;
+  border: none;
+  color: #9B9FAA;
+  letter-spacing: 0.04em;
+}
+
