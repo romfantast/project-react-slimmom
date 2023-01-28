@@ -14,9 +14,8 @@ function UserInfo() {
   return (
     <div className={css.userInfo}>
       <span>
-        <b>{username}</b> |{' '}
+        <b>{username}</b> |
         <button onClick={handleLogout} className={css.btnExit}>
-          {' '}
           Exit
         </button>
       </span>
