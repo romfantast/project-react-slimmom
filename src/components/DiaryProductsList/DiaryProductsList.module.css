@@ -1,0 +1,10 @@
+.productsList {
+  height: 280px;
+  overflow: scroll;
+  /* box-shadow: inset 0px -15px 10px -15px rgb(152, 152, 152); */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    #ffffff 42.19%
+  );
+}

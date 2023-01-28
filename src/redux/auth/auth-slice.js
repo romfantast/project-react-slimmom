@@ -5,9 +5,12 @@ import storage from 'redux-persist/lib/storage';
 import { fetchStatus } from 'redux/fetchStatus';
 
 const initialState = {
+  isAuth: false,
   token: null,
   refreshToken: '',
+  sid: '',
   status: fetchStatus.idle,
+  error: '',
 };
 
 const authSlice = createSlice({
@@ -18,7 +21,7 @@ const authSlice = createSlice({
       .addCase(authOperations.register.pending, (state, _) => {
         state.status = fetchStatus.pending;
       })
-      .addCase(authOperations.register.fulfilled, (state, action) => {
+      .addCase(authOperations.register.fulfilled, (state, _) => {
         state.status = fetchStatus.fullfield;
       })
       .addCase(authOperations.register.rejected, (state, _) => {
@@ -41,7 +44,7 @@ const authSlice = createSlice({
       .addCase(authOperations.logout.pending, (state, _) => {
         state.status = fetchStatus.pending;
       })
-      .addCase(authOperations.logout.fulfilled, (state, action) => {
+      .addCase(authOperations.logout.fulfilled, (state, _) => {
         state.status = fetchStatus.fullfield;
         state.token = null;
       })
@@ -53,8 +56,9 @@ const authSlice = createSlice({
 });
 
 const persistConfigAuth = {
-  key: 'authState',
+  key: 'auth',
   storage,
+  whitelist: ['token'],
 };
 
 export const authReducer = persistReducer(persistConfigAuth, authSlice.reducer);

@@ -1,0 +1,9 @@
+.container {
+  padding: 363px 95px 20px 94px;
+  width: 520px;
+  background-color: #f0f1f3;
+  margin-top: -363px;
+  position: relative;
+  height: 1000px;
+  z-index: -10;
+}

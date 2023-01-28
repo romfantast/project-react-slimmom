@@ -1,0 +1,21 @@
+.flexContainer {
+  display: flex;
+}
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  margin-bottom: 60px;
+}
+.date {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.datePickerWrapper {
+  display: flex;
+}
+
+.datePickerWrapper input {
+  display: none;
+}

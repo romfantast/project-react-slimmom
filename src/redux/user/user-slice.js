@@ -3,6 +3,7 @@ import { fetchStatus } from 'redux/fetchStatus';
 import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import userOperations from './user-operations';
+import authOperations from 'redux/auth/auth-operations';
 
 const initialState = {
   email: '',
@@ -39,13 +40,23 @@ const userSlice = createSlice({
       })
       .addCase(userOperations.current.rejected, (state, _) => {
         state.status = fetchStatus.rejected;
+      })
+      .addCase(authOperations.logout.pending, (state, _) => {
+        state.status = fetchStatus.pending;
+      })
+      .addCase(authOperations.logout.fulfilled, () => {
+        return initialState;
+      })
+      .addCase(authOperations.logout.rejected, () => {
+        return initialState;
       });
   },
 });
 
 const persistConfigAuth = {
-  key: 'authState',
+  key: 'user',
   storage,
+  blacklist: ['email', 'password', 'status'],
 };
 
 export const userReducer = persistReducer(persistConfigAuth, userSlice.reducer);

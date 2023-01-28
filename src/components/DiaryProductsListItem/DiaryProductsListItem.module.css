@@ -1,0 +1,27 @@
+.item {
+}
+.item span {
+  height: 40px;
+  display: inline-flex;
+  align-items: flex-start;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.name {
+  width: 240px;
+  margin-right: 48px;
+}
+.gram,
+.kcal {
+  justify-content: flex-end;
+  width: 107px;
+  margin-right: 35px;
+}
+
+.btn {
+  border: none;
+  background-color: inherit;
+  transform: rotate(45deg);
+  font-size: 35px;
+  color: #9b9faa;
+}
