@@ -7,6 +7,9 @@ import { selectKcal } from 'redux/dailyRate/dailyRate-selectors';
 import { selectToken } from 'redux/auth/auth-selectors';
 import { dailyRateUserId } from 'redux/dailyDateUserId/dailyDateUserId-operations';
 import { selectUserId } from 'redux/user/user-selectors';
+import { infoUser } from 'redux/info/info-operations';
+
+const TODAY = new Date().toLocaleDateString('en-CA');
 
 function CalculatorСalorieForm() {
   const [userData] = useState(() => {
@@ -52,7 +55,9 @@ function CalculatorСalorieForm() {
         userData,
         id,
       };
-      dispatch(dailyRateUserId(userDataWithId));
+      dispatch(dailyRateUserId(userDataWithId)).then(() =>
+        dispatch(infoUser({ date: TODAY }))
+      );
     } else {
       dispatch(dailyRate(userData)).then(() => {
         resetForm();

@@ -21,8 +21,14 @@ const authSlice = createSlice({
       .addCase(authOperations.register.pending, (state, _) => {
         state.status = fetchStatus.pending;
       })
-      .addCase(authOperations.register.fulfilled, (state, _) => {
+      .addCase(authOperations.register.fulfilled, (state, action) => {
         state.status = fetchStatus.fullfield;
+        state.token = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
+        state.sid = action.payload.sid;
+        state.user = { ...action.payload.user };
+        state.isAuth = true;
+        state.error = '';
       })
       .addCase(authOperations.register.rejected, (state, _) => {
         state.status = fetchStatus.rejected;
@@ -33,8 +39,12 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.login.fulfilled, (state, action) => {
         state.status = fetchStatus.fullfield;
-        state.token = action.payload?.accessToken;
-        state.refreshToken = action.payload?.refreshToken;
+        state.token = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
+        state.sid = action.payload.sid;
+        state.user = { ...action.payload.user };
+        state.isAuth = true;
+        state.error = '';
       })
       .addCase(authOperations.login.rejected, (state, _) => {
         state.status = fetchStatus.rejected;
@@ -46,7 +56,12 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.logout.fulfilled, (state, _) => {
         state.status = fetchStatus.fullfield;
-        state.token = null;
+        state.token = '';
+        state.refreshToken = '';
+        state.sid = '';
+        state.isAuth = false;
+        state.user = {};
+        state.error = '';
       })
       .addCase(authOperations.logout.rejected, (state, _) => {
         state.status = fetchStatus.rejected;

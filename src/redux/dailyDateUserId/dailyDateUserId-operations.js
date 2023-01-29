@@ -5,7 +5,7 @@ import API from 'services.js/API';
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 
 export const dailyRateUserId = createAsyncThunk(
-  'dailyRateUserId/',
+  'dailyRateUserId',
   async (userData, thunkApi) => {
     try {
       const { data } = await API.dailyRateUserId(userData);

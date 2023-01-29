@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function DiaryDateСalendar() {
-  const [startDate, setStartDate] = useState(new Date());
+function DiaryDateСalendar({ startDate, setStartDate }) {
   return (
     <DatePicker
       selected={startDate}

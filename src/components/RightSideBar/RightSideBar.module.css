@@ -9,8 +9,11 @@
 }
 
 .notAllowedProductsList {
-  height: 120px;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  gap: 20px;
+  overflow-y: scroll;
 }
 
 .title {

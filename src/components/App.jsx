@@ -17,12 +17,6 @@ export const App = () => {
   const token = useSelector(selectToken);
 
   useEffect(() => {
-    dispatch(authOperations.refresh());
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuth]);
-
-  useEffect(() => {
     if (token) {
       dispatch(userOperations.current());
     }
