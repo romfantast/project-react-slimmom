@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './Modal.module.css';
+import { selectToken } from 'redux/auth/auth-selectors';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const modalRoot = document.getElementById('modal-root');
 
-function Modal({ onToggleModal }) {
+function Modal({ onToggleModal, kcal, notAllowedProducts }) {
+  const token = useSelector(selectToken);
+
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
@@ -37,19 +42,24 @@ function Modal({ onToggleModal }) {
         <div className={css.contentWrapper}>
           <h2> Your recommended daily calorie intake is</h2>
           <br />
-          <h2>2800 kcal</h2>
+          <h2>{Math.round(kcal)} kcal</h2>
           <br />
           <hr />
           <p>Foods you should not eat</p>
-          <ul>
-            <li>1. Flour products</li>
-            <li>2. Milk</li>
-            <li>3. Red meat </li>
-            <li>4. Smoked meats</li>
+          <ul className={css.notAllowedProductsList}>
+            {notAllowedProducts.length ? (
+              notAllowedProducts.map((product, index) => (
+                <li>{`${index + 1}. ${product}`}</li>
+              ))
+            ) : (
+              <p>No products</p>
+            )}
           </ul>
-          <button className={css.btnSubmitFrom} onClick={handleBtnClick}>
-            Start losing weight
-          </button>
+          <NavLink to={token ? '/calculator' : '/registration'}>
+            <button className={css.btnSubmitFrom} onClick={handleBtnClick}>
+              Start losing weight
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>,

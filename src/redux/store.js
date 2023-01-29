@@ -10,11 +10,13 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { dailyRateReducer } from './dailyRate/dailyRate-slice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     user: userReducer,
+    dailyRate: dailyRateReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

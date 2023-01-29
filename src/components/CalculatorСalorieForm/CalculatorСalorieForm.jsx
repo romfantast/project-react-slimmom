@@ -1,9 +1,18 @@
 import Modal from 'components/Modal/Modal';
 import React, { useState } from 'react';
 import css from './CalculatorСalorieForm.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { dailyRate } from 'redux/dailyRate/dailyRate-operations';
+import { selectKcal } from 'redux/dailyRate/dailyRate-selectors';
 
 function CalculatorСalorieForm() {
+  const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const kcal = useSelector(selectKcal);
+
+  const notAllowedProducts = useSelector(
+    state => state?.dailyRate?.notAllowedProducts
+  );
   const [values, setValues] = useState({
     weight: '',
     height: '',
@@ -19,7 +28,6 @@ function CalculatorСalorieForm() {
   const handleChange = event => {
     const { name, value } = event.target;
     setValues(prev => ({ ...prev, [name]: value }));
-    console.log(values);
   };
 
   function formSubmit(evt) {
@@ -31,21 +39,21 @@ function CalculatorСalorieForm() {
       desiredWeight: Number(values.desiredWeight),
       bloodType: Number(values.bloodType),
     };
-    console.log(userData);
-    handleToggleModal();
-    //here will be dispatch(/daily-rate)
-    // resetForm();
+    dispatch(dailyRate(userData)).then(() => {
+      resetForm();
+      handleToggleModal();
+    });
   }
 
-  // const resetForm = () => {
-  //   setValues({
-  //     weight: '',
-  //     height: '',
-  //     age: '',
-  //     desiredWeight: '',
-  //     bloodType: '',
-  //   });
-  // };
+  const resetForm = () => {
+    setValues({
+      weight: '',
+      height: '',
+      age: '',
+      desiredWeight: '',
+      bloodType: '',
+    });
+  };
 
   return (
     <section>
@@ -141,7 +149,13 @@ function CalculatorСalorieForm() {
           <button className={css.btnSubmitFrom}>Start losing weight</button>
         </form>
       </div>
-      {isOpenModal && <Modal onToggleModal={handleToggleModal} />}
+      {isOpenModal && (
+        <Modal
+          onToggleModal={handleToggleModal}
+          kcal={kcal}
+          notAllowedProducts={notAllowedProducts}
+        />
+      )}
     </section>
   );
 }
