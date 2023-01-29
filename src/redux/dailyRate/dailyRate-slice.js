@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { dailyRate } from './dailyRate-operations';
+import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   dailyRate: null,
@@ -27,4 +29,13 @@ const dailyRateSlice = createSlice({
   },
 });
 
-export const dailyRateReducer = dailyRateSlice.reducer;
+const persistConfigDailyRate = {
+  key: 'dailyRate',
+  storage,
+  whitelist: ['dailyRate', 'notAllowedProducts'],
+};
+
+export const dailyRateReducer = persistReducer(
+  persistConfigDailyRate,
+  dailyRateSlice.reducer
+);

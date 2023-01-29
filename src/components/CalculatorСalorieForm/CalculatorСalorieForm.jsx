@@ -1,24 +1,31 @@
-import Modal from 'components/Modal/Modal';
 import React, { useState } from 'react';
+import Modal from 'components/Modal/Modal';
 import css from './CalculatorСalorieForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { dailyRate } from 'redux/dailyRate/dailyRate-operations';
 import { selectKcal } from 'redux/dailyRate/dailyRate-selectors';
+import { selectToken } from 'redux/auth/auth-selectors';
+import { dailyRateUserId } from 'redux/dailyDateUserId/dailyDateUserId-operations';
+import { selectUserId } from 'redux/user/user-selectors';
 
 function CalculatorСalorieForm() {
+  const [userData] = useState(() => {
+    return JSON.parse(localStorage.getItem('userData'));
+  });
   const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+  const id = useSelector(selectUserId);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const kcal = useSelector(selectKcal);
-
   const notAllowedProducts = useSelector(
     state => state?.dailyRate?.notAllowedProducts
   );
   const [values, setValues] = useState({
-    weight: '',
-    height: '',
-    age: '',
-    desiredWeight: '',
-    bloodType: '',
+    weight: userData?.weight ?? '',
+    height: userData?.height ?? '',
+    age: userData?.age ?? '',
+    desiredWeight: userData?.desiredWeight ?? '',
+    bloodType: userData?.bloodType ?? '',
   });
 
   const handleToggleModal = () => {
@@ -39,10 +46,19 @@ function CalculatorСalorieForm() {
       desiredWeight: Number(values.desiredWeight),
       bloodType: Number(values.bloodType),
     };
-    dispatch(dailyRate(userData)).then(() => {
-      resetForm();
-      handleToggleModal();
-    });
+    localStorage.setItem('userData', JSON.stringify(userData));
+    if (token) {
+      const userDataWithId = {
+        userData,
+        id,
+      };
+      dispatch(dailyRateUserId(userDataWithId));
+    } else {
+      dispatch(dailyRate(userData)).then(() => {
+        resetForm();
+        handleToggleModal();
+      });
+    }
   }
 
   const resetForm = () => {

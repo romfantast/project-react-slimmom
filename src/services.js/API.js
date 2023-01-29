@@ -19,5 +19,35 @@ const currentUser = async () => {
   return data;
 };
 
-const API = { register, login, logout, currentUser };
+const refresh = async sid => {
+  return await axios.post('/auth/refresh', { sid });
+};
+
+const dailyRateUserId = async userDataWithId => {
+  return await axios.post(
+    `/daily-rate/${userDataWithId.id}`,
+    userDataWithId.userData
+  );
+};
+
+// Get info for day
+const getInfoForDay = async date => {
+  return await axios.post('/day/info', date);
+};
+
+// Get user info
+const getUserInfo = async () => {
+  return await axios.get('/user');
+};
+
+const API = {
+  register,
+  login,
+  logout,
+  currentUser,
+  dailyRateUserId,
+  getInfoForDay,
+  getUserInfo,
+  refresh,
+};
 export default API;

@@ -31,7 +31,9 @@ function Modal({ onToggleModal, kcal, notAllowedProducts }) {
     onToggleModal();
   };
 
-  const handleBtnClick = () => {};
+  const handleBtnClick = () => {
+    onToggleModal();
+  };
 
   return createPortal(
     <div className={css.Overlay} onClick={handleBackdropClick}>
@@ -49,7 +51,7 @@ function Modal({ onToggleModal, kcal, notAllowedProducts }) {
           <ul className={css.notAllowedProductsList}>
             {notAllowedProducts.length ? (
               notAllowedProducts.map((product, index) => (
-                <li>{`${index + 1}. ${product}`}</li>
+                <li key={product}>{`${index + 1}. ${product}`}</li>
               ))
             ) : (
               <p>No products</p>

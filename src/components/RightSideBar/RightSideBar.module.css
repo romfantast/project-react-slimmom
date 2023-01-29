@@ -4,6 +4,15 @@
   background-color: #f0f1f3;
   margin-top: -363px;
   position: relative;
-  height: 1000px;
+
   z-index: -10;
+}
+
+.notAllowedProductsList {
+  height: 120px;
+  overflow: scroll;
+}
+
+.title {
+  margin-bottom: 40px;
 }

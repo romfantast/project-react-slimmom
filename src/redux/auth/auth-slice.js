@@ -51,6 +51,22 @@ const authSlice = createSlice({
       .addCase(authOperations.logout.rejected, (state, _) => {
         state.status = fetchStatus.rejected;
         state.token = null;
+      })
+      .addCase(authOperations.refresh.pending, state => {
+        state.isFetched = false;
+        state.error = '';
+      })
+      .addCase(authOperations.refresh.fulfilled, (state, action) => {
+        state.token = action.payload.newAccessToken;
+        state.refreshToken = action.payload.newRefreshToken;
+        state.sid = action.payload.sid;
+        state.error = '';
+
+        state.isAuth = true;
+        state.isFetched = true;
+      })
+      .addCase(authOperations.refresh.rejected, (state, action) => {
+        state.isFetched = false;
       });
   },
 });

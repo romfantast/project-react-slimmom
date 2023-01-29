@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations, { login } from 'redux/auth/auth-operations';
 import css from './RegistrationForm.module.css';
+import { NavLink } from 'react-router-dom';
 
 function RegistrationForm() {
   const [username, setUsername] = useState('');
@@ -69,7 +70,9 @@ function RegistrationForm() {
           />
         </label>
         <button type="submit">Register</button>
-        <button type="button">Log In</button>
+        <NavLink to="/login">
+          <button type="button">Log In</button>
+        </NavLink>
       </form>
     </section>
   );

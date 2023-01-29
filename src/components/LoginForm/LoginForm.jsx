@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 import css from './LoginForm.module.css';
+import { NavLink } from 'react-router-dom';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -47,7 +48,9 @@ function LoginForm() {
           <input type="password" onChange={handleChange} name="password" />
         </label>
         <button type="submit">Log In</button>
-        <button type="button">Register</button>
+        <NavLink to="/registration">
+          <button type="button">Register</button>
+        </NavLink>
       </form>
     </section>
   );
