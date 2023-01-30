@@ -1,4 +1,62 @@
 .modalAdd {
-  background-color: aqua;
+  padding: 80px 20px 180px 20px;
+  background-color: rgb(253, 229, 229);
+  position: fixed;
+  width: 100vw;
+  height: 390px;
+  top: 85px;
+  left: 0;
+  z-index: 10;
+}
+
+.iconCross {
+  cursor: pointer;
+  font-size: 25px;
+  transform: rotate(45deg);
+  color: red;
+  position: absolute;
+  top: 0;
+  /* right: 20; */
+}
+
+.mobileFormAdd {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+}
+
+.mobileFormAdd input {
+  outline: none;
+  border: none;
+  background-color: inherit;
+  border-bottom: 2px solid #E0E0E0;
+  ;
+}
+
+.mobileFormAdd label {
+  display: flex;
+  row-gap: 5px;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+
+  color: #9B9FAA;
+}
+
+.mobileFormAdd button {
+  padding: 13px 46px;
+  background: #FC842D;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+  width: 176px;
+  border: none;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 60px;
 
 }

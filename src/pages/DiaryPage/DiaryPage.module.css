@@ -49,21 +49,3 @@
   transform: rotate(90deg);
   background-color: #ea6e16;
 }
-
-.modalAdd {
-  display: grid;
-  place-items: center;
-  background-color: rgb(160, 160, 160);
-  position: fixed;
-  width: 100vw;
-  height: 390px;
-
-  left: 0;
-  z-index: 10;
-}
-.iconCross {
-  cursor: pointer;
-  font-size: 25px;
-  transform: rotate(45deg);
-  color: white;
-}

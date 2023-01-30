@@ -7,6 +7,7 @@ import css from './DiaryPage.module.css';
 import { useDispatch } from 'react-redux';
 import { infoUser } from 'redux/info/info-operations';
 import { useMediaQuery } from 'react-responsive';
+import ModalAdd from '../../components/ModalAdd/ModalAdd';
 
 function DiaryPage() {
   const [startDate, setStartDate] = useState(new Date());
@@ -27,9 +28,6 @@ function DiaryPage() {
 
   const handleClick = () => {
     setShowMobileModalAdd(true);
-  };
-  const handleIconCrossClick = () => {
-    setShowMobileModalAdd(false);
   };
 
   return (
@@ -61,20 +59,7 @@ function DiaryPage() {
           </div>
 
           {showMobileModalAdd && (
-            <section>
-              <div className={css.modalAdd}>
-                <span className={css.iconCross} onClick={handleIconCrossClick}>
-                  +
-                </span>
-                <form>
-                  <input type="text" />
-                  <br />
-                  <input type="text" />
-                  <br />
-                  <button>add</button>
-                </form>
-              </div>
-            </section>
+            <ModalAdd setShowMobileModalAdd={setShowMobileModalAdd} />
           )}
           {isNotMobile && <DiaryAddProductForm startDate={startDate} />}
 
