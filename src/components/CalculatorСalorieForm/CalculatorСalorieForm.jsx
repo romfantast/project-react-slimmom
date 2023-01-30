@@ -28,7 +28,7 @@ function CalculatorСalorieForm() {
     height: userData?.height ?? '',
     age: userData?.age ?? '',
     desiredWeight: userData?.desiredWeight ?? '',
-    bloodType: userData?.bloodType ?? '',
+    bloodType: userData?.bloodType + '' ?? '',
   });
 
   const handleToggleModal = () => {
@@ -120,6 +120,7 @@ function CalculatorСalorieForm() {
               <span>
                 <label>
                   <input
+                    checked={values.bloodType === '1'}
                     type="radio"
                     value="1"
                     name="bloodType"
@@ -129,6 +130,7 @@ function CalculatorСalorieForm() {
                 </label>
                 <label>
                   <input
+                    checked={values.bloodType === '2'}
                     type="radio"
                     value="2"
                     name="bloodType"
@@ -138,6 +140,7 @@ function CalculatorСalorieForm() {
                 </label>
                 <label>
                   <input
+                    checked={values.bloodType === '3'}
                     type="radio"
                     value="3"
                     name="bloodType"
@@ -147,6 +150,7 @@ function CalculatorСalorieForm() {
                 </label>
                 <label>
                   <input
+                    checked={values.bloodType === '4'}
                     type="radio"
                     value="4"
                     name="bloodType"

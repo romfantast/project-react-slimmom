@@ -16,10 +16,14 @@
   border-bottom: 1px solid #e0e0e0;
 }
 .inputName {
+  font-size: 18px;
+  outline: none;
   width: 240px;
   margin-right: 50px;
 }
 .inputGram {
+  font-size: 18px;
+  outline: none;
   width: 110px;
   margin-right: 60px;
 }
@@ -33,6 +37,11 @@
   height: 50px;
   background-color: #fc842d;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  transition: all 150ms linear;
+}
+.diaryForm button:hover {
+  transform: rotate(90deg);
+  background-color: #ea6e16;
 }
 .block {
   position: relative;

@@ -42,26 +42,30 @@ function Modal({ onToggleModal, kcal, notAllowedProducts }) {
           +
         </span>
         <div className={css.contentWrapper}>
-          <h2> Your recommended daily calorie intake is</h2>
-          <br />
-          <h2>{Math.round(kcal)} kcal</h2>
-          <br />
-          <hr />
-          <p>Foods you should not eat</p>
-          <ul className={css.notAllowedProductsList}>
-            {notAllowedProducts.length ? (
-              notAllowedProducts.map((product, index) => (
-                <li key={product}>{`${index + 1}. ${product}`}</li>
-              ))
-            ) : (
-              <p>No products</p>
-            )}
-          </ul>
-          <NavLink to={token ? '/calculator' : '/registration'}>
-            <button className={css.btnSubmitFrom} onClick={handleBtnClick}>
-              Start losing weight
-            </button>
-          </NavLink>
+          <h2 className={css.title}>
+            Your recommended daily calorie intake is
+          </h2>
+          <h2 className={css.kcalRecomended}>
+            {Math.round(kcal)} <span>kcal</span>
+          </h2>
+          <div className={css.contentWrapper}>
+            <span className={css.line}></span>
+            <p className={css.titleNotEat}>Foods you should not eat</p>
+            <ul className={css.notAllowedProductsList}>
+              {notAllowedProducts.length ? (
+                notAllowedProducts.map((product, index) => (
+                  <li key={product}>{`${index + 1}. ${product}`}</li>
+                ))
+              ) : (
+                <p>No products</p>
+              )}
+            </ul>
+            <NavLink to={token ? '/calculator' : '/registration'}>
+              <button className={css.btnSubmitFrom} onClick={handleBtnClick}>
+                Start losing weight
+              </button>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>,

@@ -6,7 +6,10 @@
 .btnExit {
   background-color: transparent;
   border: none;
-  color: #9B9FAA;
+  color: #9b9faa;
   letter-spacing: 0.04em;
+  transition: all 150ms linear;
 }
-
+.btnExit:hover {
+  color: #808288;
+}

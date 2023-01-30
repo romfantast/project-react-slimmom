@@ -5,10 +5,12 @@ import css from './CalculatorPage.module.css';
 
 function CalculatorPage() {
   return (
-    <div className={css.flexContainer}>
-      <CalculatorСalorieForm />
-      <RightSideBar />
-    </div>
+    <section>
+      <div className={css.flexContainer}>
+        <CalculatorСalorieForm />
+        <RightSideBar />
+      </div>
+    </section>
   );
 }
 

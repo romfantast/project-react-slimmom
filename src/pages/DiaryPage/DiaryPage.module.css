@@ -13,7 +13,17 @@
 }
 
 .datePickerWrapper {
+  padding: 5px;
   display: flex;
+  cursor: pointer;
+}
+.datePickerWrapper svg {
+  fill: #9b9faa;
+  transition: all 150ms linear;
+}
+
+.datePickerWrapper:hover svg {
+  fill: #808288;
 }
 
 .datePickerWrapper input {

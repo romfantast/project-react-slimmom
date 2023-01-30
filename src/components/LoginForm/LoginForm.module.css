@@ -1,11 +1,11 @@
 .loginForm {
   width: 400px;
 }
-.loginForm label{
+.loginForm label {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  color: #9B9FAA;
+  color: #9b9faa;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -17,35 +17,40 @@
   margin-bottom: 60px;
 }
 
-.loginForm input{
+.loginForm input {
   width: 240px;
   border: none;
   font-size: 16px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
   outline: none;
 }
 .title {
-margin-bottom: 55px;
-color: #FC842D;
-text-transform: uppercase;
+  margin-bottom: 55px;
+  color: #fc842d;
+  text-transform: uppercase;
 }
 
-.loginForm button{
+.loginForm button {
   width: 182px;
   padding: 13px 15px;
   font-size: 14px;
-    font-weight: 700;
-      color: #FC842D;
-        letter-spacing: 0.04em;
-    background-color: white;
-    border-radius: 30px;
-    border:2px solid #FC842D;
-    box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  font-weight: 700;
+  color: #fc842d;
+  letter-spacing: 0.04em;
+  background-color: white;
+  border-radius: 30px;
+  border: 2px solid #fc842d;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  transition: all 150ms linear;
+}
+.loginForm button:hover {
+  background-color: #fc842d;
+  color: white;
 }
 
-button[type='submit']{
+button[type='submit'] {
   color: white;
-  background-color: #FC842D;;
+  background-color: #fc842d;
   margin-right: 32px;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
 }

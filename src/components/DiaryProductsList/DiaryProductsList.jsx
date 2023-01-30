@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 function DiaryProductsList({ startDate }) {
   const eatenProducts = useSelector(state => state.infoUser?.eatenProducts);
+
   return (
     <ul className={css.productsList}>
       {eatenProducts?.length ? (

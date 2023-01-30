@@ -65,6 +65,7 @@ function DiaryAddProductForm({ startDate }) {
             className={css.inputName}
             value={searchedInputValue}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -74,6 +75,7 @@ function DiaryAddProductForm({ startDate }) {
             className={css.inputGram}
             value={grams}
             onChange={handleChangeGrams}
+            required
           />
         </label>
 

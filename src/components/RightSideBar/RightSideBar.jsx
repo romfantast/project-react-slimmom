@@ -35,20 +35,23 @@ function RightSideBar({ startDate }) {
   return (
     <div className={css.container}>
       <div>
-        <h3>Summary for {startDate}</h3>
+        <h3>
+          Summary for {startDate || new Date().toLocaleDateString('en-CA')}
+        </h3>
         <p>
-          <span>Left</span> <span>{Math.round(kcalLeft)} kcal</span>
+          <span>Left</span> <span>{Math.round(kcalLeft) || '0'} kcal</span>
         </p>
         <p>
-          <span>Consumed</span> <span>{Math.round(kcalConsumed)} kcal</span>
+          <span>Consumed </span>
+          <span>{Math.round(kcalConsumed) || '0'} kcal</span>
         </p>
         <p>
           <span>Daily rate </span>
-          <span>{Math.round(dailyRate || dailyRateUserId)} kcal</span>
+          <span>{Math.round(dailyRate || dailyRateUserId) || '0'} kcal</span>
         </p>
         <p>
-          <span>{Math.round(percentsOfDailyRate)}% of normal</span>{' '}
-          <span>000 kcal</span>
+          <span>{Math.round(percentsOfDailyRate) || '0'}% of normal </span>
+          <span>{Math.round(kcalConsumed) || '0'} kcal</span>
         </p>
       </div>
 
