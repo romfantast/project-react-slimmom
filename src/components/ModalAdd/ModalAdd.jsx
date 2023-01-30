@@ -5,7 +5,7 @@ import API from 'services.js/API';
 
 import css from './ModalAdd.module.css';
 
-function ModalAdd({ setShowMobileModalAdd, startDate }) {
+function ModalAdd({ setShowMobileModalAdd, startDate, handleClickClose }) {
   const [searchedProducts, setSearchedProducts] = useState([]);
   const [isOpenSearcHedList, setIsOpenSearcHedList] = useState(false);
   const [searchedInputValue, setSearchedInputValue] = useState('');
@@ -19,7 +19,6 @@ function ModalAdd({ setShowMobileModalAdd, startDate }) {
     try {
       if (searchQuery) {
         const { data } = await API.searchProducts(searchQuery);
-        console.log(data);
         setSearchedProducts(data);
         setIsOpenSearcHedList(true);
       } else {
@@ -42,6 +41,7 @@ function ModalAdd({ setShowMobileModalAdd, startDate }) {
   };
 
   const handleIconCrossClick = () => {
+    document.body.style.overflow = 'auto';
     setShowMobileModalAdd(false);
   };
   const handleSubmit = async e => {
@@ -57,6 +57,7 @@ function ModalAdd({ setShowMobileModalAdd, startDate }) {
     } catch (error) {
       console.log(error);
     }
+    handleClickClose();
   };
   return (
     <section>

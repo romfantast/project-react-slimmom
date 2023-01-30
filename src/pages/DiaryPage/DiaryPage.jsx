@@ -26,8 +26,13 @@ function DiaryPage() {
     .toLocaleDateString('en-GB')
     .replaceAll('/', '.');
 
-  const handleClick = () => {
+  const handleClickOpen = () => {
+    document.body.style.overflow = 'hidden';
     setShowMobileModalAdd(true);
+  };
+  const handleClickClose = () => {
+    document.body.style.overflow = 'auto';
+    setShowMobileModalAdd(false);
   };
 
   return (
@@ -60,6 +65,7 @@ function DiaryPage() {
 
           {showMobileModalAdd && (
             <ModalAdd
+              handleClickClose={handleClickClose}
               setShowMobileModalAdd={setShowMobileModalAdd}
               startDate={startDate}
             />
@@ -70,7 +76,7 @@ function DiaryPage() {
             startDate={startDate.toLocaleDateString('en-CA')}
           />
           {!isNotMobile && (
-            <button className={css.addBtn} onClick={handleClick}>
+            <button className={css.addBtn} onClick={handleClickOpen}>
               +
             </button>
           )}

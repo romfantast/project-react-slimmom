@@ -3,20 +3,24 @@
   background-color: rgb(253, 229, 229);
   position: fixed;
   width: 100vw;
-  height: 390px;
+  height: 230px;
   top: 85px;
   left: 0;
   z-index: 10;
+  overflow: scroll;
 }
 
 .iconCross {
   cursor: pointer;
   font-size: 25px;
   transform: rotate(45deg);
-  color: red;
+  color: #9b9faa;
   position: absolute;
   top: 0;
-  /* right: 20; */
+  transition: all 150ms linear;
+}
+.iconCross:hover {
+  color: #5f6163;
 }
 
 .mobileFormAdd {
@@ -30,8 +34,7 @@
   outline: none;
   border: none;
   background-color: inherit;
-  border-bottom: 2px solid #E0E0E0;
-  ;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .mobileFormAdd label {
@@ -43,24 +46,24 @@
   line-height: 17px;
   letter-spacing: 0.04em;
 
-  color: #9B9FAA;
+  color: #9b9faa;
 }
 
 .mobileFormAdd button {
   padding: 13px 46px;
-  background: #FC842D;
+  background: #fc842d;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
   width: 176px;
   border: none;
   letter-spacing: 0.04em;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0 auto;
-  margin-top: 60px;
-
+  margin: 30px auto;
 }
 
-.positionWrapper {
-  
+.searchedProductsList {
+  max-height: 200px;
+  overflow-y: scroll;
 }
