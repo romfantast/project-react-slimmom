@@ -5,6 +5,10 @@ const initialState = {
   date: '',
   eatenProducts: [],
   daySummary: {},
+  dailyRate: '',
+  kcalConsumed: '',
+  kcalLeft: '',
+  percentsOfDailyRate: '',
 };
 
 const info = createSlice({
@@ -15,6 +19,12 @@ const info = createSlice({
       state.date = action.payload.date;
       state.eatenProducts = action.payload.eatenProducts;
       state.daySummary = action.payload.daySummary;
+
+      //======
+      state.kcalLeft = action.payload.kcalLeft;
+      state.kcalConsumed = action.payload.kcalConsumed;
+      state.dailyRate = action.payload.dailyRate;
+      state.percentsOfDailyRate = action.payload.percentsOfDailyRate;
     });
   },
 });

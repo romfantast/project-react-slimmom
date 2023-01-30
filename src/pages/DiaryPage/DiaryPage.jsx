@@ -23,7 +23,9 @@ function DiaryPage() {
     <div className={css.flexContainer}>
       <section>
         <div className={css.dateWrapper}>
-          <span className={css.date}>20.06.2020</span>
+          <span className={css.date}>
+            {startDate.toLocaleDateString('en-CA')}
+          </span>
           <label className={css.datePickerWrapper}>
             <BsCalendarCheck />
             <span>
@@ -35,7 +37,7 @@ function DiaryPage() {
           </label>
         </div>
 
-        <DiaryAddProductForm />
+        <DiaryAddProductForm startDate={startDate} />
         <DiaryProductsList />
       </section>
 

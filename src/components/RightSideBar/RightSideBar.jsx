@@ -12,13 +12,17 @@ function RightSideBar({ startDate }) {
   const dailyRate = useSelector(
     state => state?.infoUser?.daySummary?.dailyRate
   );
-  //   const date = useSelector(state => state?.infoUser?.date);
-  const kcalLeft = useSelector(state => state?.infoUser?.daySummary?.kcalLeft);
+  const kcalLeft = useSelector(
+    state => state?.infoUser?.daySummary?.kcalLeft || state?.infoUser?.kcalLeft
+  );
   const kcalConsumed = useSelector(
-    state => state?.infoUser?.daySummary?.kcalConsumed
+    state =>
+      state?.infoUser?.daySummary?.kcalConsumed || state?.infoUser?.kcalConsumed
   );
   const percentsOfDailyRate = useSelector(
-    state => state?.infoUser?.daySummary?.percentsOfDailyRate
+    state =>
+      state?.infoUser?.daySummary?.percentsOfDailyRate ||
+      state?.infoUser?.percentsOfDailyRate
   );
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
   const dailyRateUserId = useSelector(selectDailyRateUserId);
@@ -33,7 +37,7 @@ function RightSideBar({ startDate }) {
       <div>
         <h3>Summary for {startDate}</h3>
         <p>
-          <span>Left</span> <span>{Math.round(+kcalLeft)} kcal</span>
+          <span>Left</span> <span>{Math.round(kcalLeft)} kcal</span>
         </p>
         <p>
           <span>Consumed</span> <span>{Math.round(kcalConsumed)} kcal</span>

@@ -30,14 +30,28 @@ const dailyRateUserId = async userDataWithId => {
   );
 };
 
-// Get info for day
 const getInfoForDay = async date => {
   return await axios.post('/day/info', date);
 };
 
-// Get user info
 const getUserInfo = async () => {
   return await axios.get('/user');
+};
+
+const searchProducts = async search => {
+  return await axios.get(`/product/?search=${search}`);
+};
+
+// Post an eaten product
+const addEatenProduct = async params => {
+  return await axios.post('/day', params);
+};
+
+// Delete eaten product
+const deleteEatenProduct = async (dayId, eatenProductId) => {
+  return await axios.delete('/day', {
+    data: { dayId, eatenProductId },
+  });
 };
 
 const API = {
@@ -49,5 +63,8 @@ const API = {
   getInfoForDay,
   getUserInfo,
   refresh,
+  searchProducts,
+  addEatenProduct,
+  deleteEatenProduct,
 };
 export default API;
