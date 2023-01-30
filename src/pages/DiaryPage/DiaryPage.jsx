@@ -6,10 +6,13 @@ import RightSideBar from 'components/RightSideBar/RightSideBar';
 import css from './DiaryPage.module.css';
 import { useDispatch } from 'react-redux';
 import { infoUser } from 'redux/info/info-operations';
+import { useMediaQuery } from 'react-responsive';
 
 function DiaryPage() {
   const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
+  const isNotMobile = useMediaQuery({ query: '(min-width: 768px)' });
+  const [showMobileModalAdd, setShowMobileModalAdd] = useState(false);
 
   useEffect(() => {
     const date = startDate.toLocaleDateString('en-CA');
@@ -21,6 +24,13 @@ function DiaryPage() {
   const normalizedDate = startDate
     .toLocaleDateString('en-GB')
     .replaceAll('/', '.');
+
+  const handleClick = () => {
+    setShowMobileModalAdd(true);
+  };
+  const handleIconCrossClick = () => {
+    setShowMobileModalAdd(false);
+  };
 
   return (
     <section>
@@ -50,10 +60,32 @@ function DiaryPage() {
             </label>
           </div>
 
-          <DiaryAddProductForm startDate={startDate} />
+          {showMobileModalAdd && (
+            <section>
+              <div className={css.modalAdd}>
+                <span className={css.iconCross} onClick={handleIconCrossClick}>
+                  +
+                </span>
+                <form>
+                  <input type="text" />
+                  <br />
+                  <input type="text" />
+                  <br />
+                  <button>add</button>
+                </form>
+              </div>
+            </section>
+          )}
+          {isNotMobile && <DiaryAddProductForm startDate={startDate} />}
+
           <DiaryProductsList
             startDate={startDate.toLocaleDateString('en-CA')}
           />
+          {!isNotMobile && (
+            <button className={css.addBtn} onClick={handleClick}>
+              +
+            </button>
+          )}
         </section>
 
         <RightSideBar startDate={normalizedDate} />

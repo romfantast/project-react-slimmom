@@ -1,8 +1,9 @@
 .item {
   display: flex;
+  justify-content: space-between;
 }
 .item span {
-  height: 40px;
+  height: max-content;
   display: inline-flex;
   align-items: flex-start;
   border-bottom: 2px solid #e0e0e0;
@@ -25,6 +26,7 @@
   transform: rotate(45deg);
   font-size: 35px;
   color: #9b9faa;
+  justify-self: flex-end;
 }
 
 .btn:hover {

@@ -18,7 +18,8 @@ const info = createSlice({
   extraReducers: builder => {
     builder.addCase(infoUser.fulfilled, (state, action) => {
       state.date = action.payload?.date;
-      state.eatenProducts = action.payload?.eatenProducts;
+      // state.eatenProducts = action.payload?.eatenProducts;
+      state.eatenProducts = action.payload?.eatenProducts.reverse();
       state.daySummary = action.payload?.daySummary;
       state.dayId = action.payload?.id;
       //======

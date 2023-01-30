@@ -1,19 +1,48 @@
 .container {
-  padding: 363px 95px 20px 94px;
-  width: 520px;
+  /* padding: 363px 95px 20px 94px; */
+  /* width: 520px; */
+
+  padding: 40px 20px;
   background-color: #f0f1f3;
-  margin-top: -363px;
+  /* margin-top: -363px; */
   position: relative;
   height: 100vh;
   z-index: -10;
+  font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+  
+    color: #9B9FAA;
 }
 
 .notAllowedProductsList {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   max-height: 200px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .title {
+  margin-bottom: 20px;
+  font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+  
+    color: #212121;
+}
+.topWrapper{
   margin-bottom: 40px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #F0F1F3;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #264061;
 }

@@ -81,6 +81,7 @@ function DiaryAddProductForm({ startDate }) {
 
         <button>+</button>
       </form>
+
       {isOpenSearcHedList && (
         <div className={css.searchedListWrapper}>
           {searchedProducts.length > 0 && (

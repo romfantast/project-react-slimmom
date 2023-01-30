@@ -60,3 +60,7 @@ button {
     width: 1280px;
   }
 }
+
+::-webkit-scrollbar {
+  
+}
