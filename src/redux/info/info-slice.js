@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { infoUser } from './info-operations';
 
 const initialState = {
+  dayId: '',
   date: '',
   eatenProducts: [],
   daySummary: {},
@@ -19,7 +20,7 @@ const info = createSlice({
       state.date = action.payload.date;
       state.eatenProducts = action.payload.eatenProducts;
       state.daySummary = action.payload.daySummary;
-
+      state.dayId = action.payload.id;
       //======
       state.kcalLeft = action.payload.kcalLeft;
       state.kcalConsumed = action.payload.kcalConsumed;

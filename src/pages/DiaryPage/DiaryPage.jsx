@@ -38,7 +38,7 @@ function DiaryPage() {
         </div>
 
         <DiaryAddProductForm startDate={startDate} />
-        <DiaryProductsList />
+        <DiaryProductsList startDate={startDate.toLocaleDateString('en-CA')} />
       </section>
 
       <RightSideBar startDate={startDate.toLocaleDateString('en-CA')} />

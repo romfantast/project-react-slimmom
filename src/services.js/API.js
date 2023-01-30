@@ -15,7 +15,7 @@ const logout = async () => {
 };
 
 const currentUser = async () => {
-  const { data } = await axios.get('https://slimmom-backend.goit.global/user');
+  const { data } = await axios.get('/user');
   return data;
 };
 
@@ -34,10 +34,6 @@ const getInfoForDay = async date => {
   return await axios.post('/day/info', date);
 };
 
-const getUserInfo = async () => {
-  return await axios.get('/user');
-};
-
 const searchProducts = async search => {
   return await axios.get(`/product/?search=${search}`);
 };
@@ -48,10 +44,8 @@ const addEatenProduct = async params => {
 };
 
 // Delete eaten product
-const deleteEatenProduct = async (dayId, eatenProductId) => {
-  return await axios.delete('/day', {
-    data: { dayId, eatenProductId },
-  });
+const deleteEatenProduct = async deleteData => {
+  return await axios.delete('/day', { data: deleteData });
 };
 
 const API = {
@@ -61,7 +55,6 @@ const API = {
   currentUser,
   dailyRateUserId,
   getInfoForDay,
-  getUserInfo,
   refresh,
   searchProducts,
   addEatenProduct,

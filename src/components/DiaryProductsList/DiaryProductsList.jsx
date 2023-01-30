@@ -3,14 +3,18 @@ import DiaryProductsListItem from 'components/DiaryProductsListItem/DiaryProduct
 import css from './DiaryProductsList.module.css';
 import { useSelector } from 'react-redux';
 
-function DiaryProductsList() {
+function DiaryProductsList({ startDate }) {
   const eatenProducts = useSelector(state => state.infoUser?.eatenProducts);
-  console.log(eatenProducts);
   return (
     <ul className={css.productsList}>
       {eatenProducts?.length ? (
         eatenProducts.map(product => (
-          <DiaryProductsListItem key={product.id} product={product} />
+          <DiaryProductsListItem
+            key={product.id}
+            product={product}
+            id={product.id}
+            startDate={startDate}
+          />
         ))
       ) : (
         <p>no products</p>
