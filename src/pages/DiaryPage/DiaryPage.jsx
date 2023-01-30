@@ -59,7 +59,10 @@ function DiaryPage() {
           </div>
 
           {showMobileModalAdd && (
-            <ModalAdd setShowMobileModalAdd={setShowMobileModalAdd} />
+            <ModalAdd
+              setShowMobileModalAdd={setShowMobileModalAdd}
+              startDate={startDate}
+            />
           )}
           {isNotMobile && <DiaryAddProductForm startDate={startDate} />}
 
