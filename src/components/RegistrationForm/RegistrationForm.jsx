@@ -26,7 +26,6 @@ function RegistrationForm() {
   const handleSubmit = e => {
     e.preventDefault();
     const credentials = { username, email, password };
-    console.log(credentials);
     dispatch(authOperations.register(credentials))
       .unwrap()
       .then(() => {

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { token } from '../auth/auth-operations';
 import API from 'services.js/API';
 import { token } from 'redux/auth/auth-operations';
 

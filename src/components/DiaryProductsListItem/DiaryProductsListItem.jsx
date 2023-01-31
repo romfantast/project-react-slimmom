@@ -12,7 +12,6 @@ function DiaryProductsListItem({
   const dispatch = useDispatch();
 
   const handleDeleteClick = async () => {
-    console.log('delete product');
     const deleteData = { eatenProductId: id, dayId };
     try {
       await API.deleteEatenProduct(deleteData);

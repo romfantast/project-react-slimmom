@@ -19,7 +19,6 @@ function DiaryAddProductForm({ startDate }) {
     try {
       if (searchQuery) {
         const { data } = await API.searchProducts(searchQuery);
-        console.log(data);
         setSearchedProducts(data);
         setIsOpenSearcHedList(true);
       } else {

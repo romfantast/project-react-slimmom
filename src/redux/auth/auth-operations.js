@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import API from 'services.js/API';
-// {email: 'passatik111@gmail.com', username: 'roma', id: '63d512a449bdbc328967944e'}
 
 export const token = {
   set(token) {
@@ -44,24 +43,5 @@ const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  const persistToken = state.auth.refreshToken;
-  const sid = state.auth.sid;
-
-  if (persistToken === '') {
-    return thunkAPI.rejectWithValue();
-  }
-  token.set(persistToken);
-
-  try {
-    const { data } = await API.refresh(sid);
-    token.set(data.newAccessToken);
-    return data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue();
-  }
-});
-
-const authOperations = { register, login, logout, refresh };
+const authOperations = { register, login, logout };
 export default authOperations;

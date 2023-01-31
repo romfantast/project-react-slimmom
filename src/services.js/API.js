@@ -19,10 +19,6 @@ const currentUser = async () => {
   return data;
 };
 
-const refresh = async sid => {
-  return await axios.post('/auth/refresh', { sid });
-};
-
 const dailyRateUserId = async userDataWithId => {
   return await axios.post(
     `/daily-rate/${userDataWithId.id}`,
@@ -55,7 +51,6 @@ const API = {
   currentUser,
   dailyRateUserId,
   getInfoForDay,
-  refresh,
   searchProducts,
   addEatenProduct,
   deleteEatenProduct,

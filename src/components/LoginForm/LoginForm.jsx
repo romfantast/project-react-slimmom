@@ -23,7 +23,6 @@ function LoginForm() {
   const handleSubmit = e => {
     e.preventDefault();
     const credentials = { email, password };
-    console.log(credentials);
     dispatch(authOperations.login(credentials)).unwrap();
 
     setEmail('');
