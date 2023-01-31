@@ -66,7 +66,7 @@ function ModalAdd({ setShowMobileModalAdd, startDate, handleClickClose }) {
         +
       </span>
       <form className={css.mobileFormAdd} onSubmit={handleSubmit}>
-        <label>
+        <label className={css.labelName}>
           Enter product name
           <input
             type="text"
