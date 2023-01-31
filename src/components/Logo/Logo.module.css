@@ -7,6 +7,12 @@
 .logoText {
   display: none;
 }
+.logoWrapper {
+  margin-right: 20px;
+}
+.logoWrapper a {
+  display: contents;
+}
 
 @media screen and (min-width: 768px) {
   .logoWrapper {
