@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/project-react-slimmom/static/css/main.1db523c7.css",
+    "main.css": "/project-react-slimmom/static/css/main.62b85d7c.css",
     "main.js": "/project-react-slimmom/static/js/main.127654cd.js",
     "index.html": "/project-react-slimmom/index.html",
-    "main.1db523c7.css.map": "/project-react-slimmom/static/css/main.1db523c7.css.map",
+    "main.62b85d7c.css.map": "/project-react-slimmom/static/css/main.62b85d7c.css.map",
     "main.127654cd.js.map": "/project-react-slimmom/static/js/main.127654cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.1db523c7.css",
+    "static/css/main.62b85d7c.css",
     "static/js/main.127654cd.js"
   ]
 }
