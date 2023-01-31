@@ -38,7 +38,7 @@ function DiaryPage() {
   return (
     <section>
       <div className={css.flexContainer}>
-        <div>
+        <div className={css.leftWrapper}>
           <div className={css.dateWrapper}>
             <span className={css.date}>{normalizedDate}</span>
             <label className={css.datePickerWrapper}>
