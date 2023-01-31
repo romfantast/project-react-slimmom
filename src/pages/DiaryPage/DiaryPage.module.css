@@ -13,9 +13,13 @@
   font-weight: 700;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1280px) {
   .date {
     font-size: 34px;
+  }
+  .flexContainer {
+      flex-direction: row;
+      justify-content: space-between;
   }
 }
 

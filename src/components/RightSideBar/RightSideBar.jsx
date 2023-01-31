@@ -35,7 +35,6 @@ function RightSideBar({ startDate }) {
   //   }, [dispatch]);
 
   return (
-    //  <section>
     <div className={css.container}>
       <div className={css.topWrapper}>
         <h3 className={css.title}>
@@ -57,19 +56,19 @@ function RightSideBar({ startDate }) {
           <span>{Math.round(kcalConsumed) || '0'} kcal</span>
         </p>
       </div>
-
-      <h3 className={css.title}>Food not to recommended</h3>
-      <ul className={css.notAllowedProductsList}>
-        {notAllowedProducts.length ? (
-          notAllowedProducts.map((product, index) => (
-            <li key={product}>{`${index + 1}. ${product}`}</li>
-          ))
-        ) : (
-          <p>No products</p>
-        )}
-      </ul>
+      <div className={css.bottomWrapper}>
+        <h3 className={css.title}>Food not to recommended</h3>
+        <ul className={css.notAllowedProductsList}>
+          {notAllowedProducts.length ? (
+            notAllowedProducts.map((product, index) => (
+              <li key={product}>{`${index + 1}. ${product}`}</li>
+            ))
+          ) : (
+            <p>No products</p>
+          )}
+        </ul>
+      </div>
     </div>
-    //  </section>
   );
 }
 

@@ -10,13 +10,28 @@
 
 .name {
   width: 240px;
-  margin-right: 48px;
+  /* margin-right: 48px; */
 }
 .gram,
 .kcal {
   justify-content: flex-end;
   width: 107px;
-  margin-right: 35px;
+  /* margin-right: 35px; */
+}
+
+@media screen and (max-width: 580px ) {
+  .name {
+      width: 130px;
+      /* margin-right: 48px; */
+    }
+  
+    .gram,
+    .kcal {
+      justify-content: flex-end;
+      width: 50px;
+      /* margin-right: 35px; */
+    }
+  
 }
 
 .btn {
