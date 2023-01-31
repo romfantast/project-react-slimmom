@@ -1,12 +1,14 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 import css from './RightSideBar.module.css';
 import { selectDailyRateUserId } from 'redux/dailyDateUserId/dailyDateUserId-selectors';
-import { useEffect } from 'react';
-import { infoUser } from 'redux/info/info-operations';
-import { selectNotAllowedProducts } from 'redux/user/user-selectors';
 
-const TODAY = new Date().toLocaleDateString('en-CA');
+import { selectNotAllowedProducts } from 'redux/user/user-selectors';
+// import { useEffect } from 'react';
+// import { infoUser } from 'redux/info/info-operations';
+// const TODAY = new Date().toLocaleDateString('en-CA');
+// import { useDispatch } from 'react-redux';
 
 function RightSideBar({ startDate }) {
   const dailyRate = useSelector(
@@ -26,11 +28,11 @@ function RightSideBar({ startDate }) {
   );
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
   const dailyRateUserId = useSelector(selectDailyRateUserId);
-  const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(infoUser({ date: TODAY }));
-  }, [dispatch]);
+  //   useEffect(() => {
+  //     dispatch(infoUser({ date: TODAY }));
+  //   }, [dispatch]);
 
   return (
     //  <section>
