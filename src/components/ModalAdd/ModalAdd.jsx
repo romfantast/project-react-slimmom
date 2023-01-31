@@ -60,54 +60,50 @@ function ModalAdd({ setShowMobileModalAdd, startDate, handleClickClose }) {
     handleClickClose();
   };
   return (
-    <section>
-      <div className={css.modalAdd}>
-        <span className={css.iconCross} onClick={handleIconCrossClick}>
-          +
-        </span>
-        <form className={css.mobileFormAdd} onSubmit={handleSubmit}>
-          <label>
-            Enter product name
-            <input
-              type="text"
-              value={searchedInputValue}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label>
-            Grams
-            <input
-              type="number"
-              value={grams}
-              onChange={handleChangeGrams}
-              required
-            />
-          </label>
+    //  <section>
+    <div className={css.modalAdd}>
+      <span className={css.iconCross} onClick={handleIconCrossClick}>
+        +
+      </span>
+      <form className={css.mobileFormAdd} onSubmit={handleSubmit}>
+        <label>
+          Enter product name
+          <input
+            type="text"
+            value={searchedInputValue}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          Grams
+          <input
+            type="number"
+            value={grams}
+            onChange={handleChangeGrams}
+            required
+          />
+        </label>
 
-          <button type="submit">Add</button>
-        </form>
-        {isOpenSearcHedList && (
-          <div className={css.positionWrapper}>
-            <div className={css.searchedListWrapper}>
-              {searchedProducts.length > 0 && (
-                <ul className={css.searchedProductsList}>
-                  {searchedProducts.map(product => (
-                    <li
-                      key={product._id}
-                      id={product._id}
-                      onClick={handleClick}
-                    >
-                      {product.title.ua} <hr />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+        <button type="submit">Add</button>
+      </form>
+      {isOpenSearcHedList && (
+        <div className={css.positionWrapper}>
+          <div className={css.searchedListWrapper}>
+            {searchedProducts.length > 0 && (
+              <ul className={css.searchedProductsList}>
+                {searchedProducts.map(product => (
+                  <li key={product._id} id={product._id} onClick={handleClick}>
+                    {product.title.ua} <hr />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+      )}
+    </div>
+    //  </section>
   );
 }
 

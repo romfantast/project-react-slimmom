@@ -33,41 +33,41 @@ function RightSideBar({ startDate }) {
   }, [dispatch]);
 
   return (
-    <section>
-      <div className={css.container}>
-        <div className={css.topWrapper}>
-          <h3 className={css.title}>
-            Summary for {startDate || new Date().toLocaleDateString('en-CA')}
-          </h3>
-          <p>
-            <span>Left</span> <span>{Math.round(kcalLeft) || '0'} kcal</span>
-          </p>
-          <p>
-            <span>Consumed </span>
-            <span>{Math.round(kcalConsumed) || '0'} kcal</span>
-          </p>
-          <p>
-            <span>Daily rate </span>
-            <span>{Math.round(dailyRate || dailyRateUserId) || '0'} kcal</span>
-          </p>
-          <p>
-            <span>{Math.round(percentsOfDailyRate) || '0'}% of normal </span>
-            <span>{Math.round(kcalConsumed) || '0'} kcal</span>
-          </p>
-        </div>
-
-        <h3 className={css.title}>Food not to recommended</h3>
-        <ul className={css.notAllowedProductsList}>
-          {notAllowedProducts.length ? (
-            notAllowedProducts.map((product, index) => (
-              <li key={product}>{`${index + 1}. ${product}`}</li>
-            ))
-          ) : (
-            <p>No products</p>
-          )}
-        </ul>
+    //  <section>
+    <div className={css.container}>
+      <div className={css.topWrapper}>
+        <h3 className={css.title}>
+          Summary for {startDate || new Date().toLocaleDateString('en-CA')}
+        </h3>
+        <p>
+          <span>Left</span> <span>{Math.round(kcalLeft) || '0'} kcal</span>
+        </p>
+        <p>
+          <span>Consumed </span>
+          <span>{Math.round(kcalConsumed) || '0'} kcal</span>
+        </p>
+        <p>
+          <span>Daily rate </span>
+          <span>{Math.round(dailyRate || dailyRateUserId) || '0'} kcal</span>
+        </p>
+        <p>
+          <span>{Math.round(percentsOfDailyRate) || '0'}% of normal </span>
+          <span>{Math.round(kcalConsumed) || '0'} kcal</span>
+        </p>
       </div>
-    </section>
+
+      <h3 className={css.title}>Food not to recommended</h3>
+      <ul className={css.notAllowedProductsList}>
+        {notAllowedProducts.length ? (
+          notAllowedProducts.map((product, index) => (
+            <li key={product}>{`${index + 1}. ${product}`}</li>
+          ))
+        ) : (
+          <p>No products</p>
+        )}
+      </ul>
+    </div>
+    //  </section>
   );
 }
 

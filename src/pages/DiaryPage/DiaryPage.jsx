@@ -38,49 +38,54 @@ function DiaryPage() {
   return (
     <section>
       <div className={css.flexContainer}>
-        <section>
-          <div className={css.dateWrapper}>
-            <span className={css.date}>{normalizedDate}</span>
-            <label className={css.datePickerWrapper}>
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M15 9H13V11H15V9Z" />
-                <path d="M11 9H9V11H11V9Z" />
-                <path d="M7.00002 9H5V11H7.00002V9Z" />
-                <path d="M17 2.00001H16V0H14V2.00001H6.00001V0H4V2.00001H3.00001C1.89001 2.00001 1.01003 2.90001 1.01003 4.00003L1 18C1 19.1 1.89001 20 3.00001 20H17C18.1 20 19 19.1 19 18V3.99998C19 2.90001 18.1 2.00001 17 2.00001ZM17 18H3.00001V6.99998H17V18Z" />
-              </svg>
+        <div className={css.dateWrapper}>
+          <span className={css.date}>{normalizedDate}</span>
+          <label className={css.datePickerWrapper}>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M15 9H13V11H15V9Z" />
+              <path d="M11 9H9V11H11V9Z" />
+              <path d="M7.00002 9H5V11H7.00002V9Z" />
+              <path d="M17 2.00001H16V0H14V2.00001H6.00001V0H4V2.00001H3.00001C1.89001 2.00001 1.01003 2.90001 1.01003 4.00003L1 18C1 19.1 1.89001 20 3.00001 20H17C18.1 20 19 19.1 19 18V3.99998C19 2.90001 18.1 2.00001 17 2.00001ZM17 18H3.00001V6.99998H17V18Z" />
+            </svg>
 
-              <span className={css.calendarWrapper}>
-                <DiaryDateСalendar
-                  startDate={startDate}
-                  setStartDate={setStartDate}
-                />
-              </span>
-            </label>
-          </div>
+            <span className={css.calendarWrapper}>
+              <DiaryDateСalendar
+                startDate={startDate}
+                setStartDate={setStartDate}
+              />
+            </span>
+          </label>
+        </div>
 
-          {showMobileModalAdd && (
-            <ModalAdd
-              handleClickClose={handleClickClose}
-              setShowMobileModalAdd={setShowMobileModalAdd}
-              startDate={startDate}
-            />
-          )}
-          {isNotMobile && <DiaryAddProductForm startDate={startDate} />}
+        {showMobileModalAdd && (
+          <ModalAdd
+            handleClickClose={handleClickClose}
+            setShowMobileModalAdd={setShowMobileModalAdd}
+            startDate={startDate}
+          />
+        )}
+        {isNotMobile && (
+          <>
+            <DiaryAddProductForm startDate={startDate} />
+          </>
+        )}
 
+        {!showMobileModalAdd && (
           <DiaryProductsList
             startDate={startDate.toLocaleDateString('en-CA')}
           />
-          {!isNotMobile && (
-            <button className={css.addBtn} onClick={handleClickOpen}>
-              +
-            </button>
-          )}
-        </section>
+        )}
+
+        {!isNotMobile && !showMobileModalAdd && (
+          <button className={css.addBtn} onClick={handleClickOpen}>
+            +
+          </button>
+        )}
 
         <RightSideBar startDate={normalizedDate} />
       </div>

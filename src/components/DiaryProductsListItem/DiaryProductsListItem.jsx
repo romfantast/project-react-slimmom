@@ -24,7 +24,7 @@ function DiaryProductsListItem({
   return (
     <li className={css.item}>
       <span className={css.name}>
-        {title.length > 25 ? title.slice(0, 25) + '...' : title}
+        {title.length > 23 ? title.slice(0, 23) + '...' : title}
       </span>
       <span className={css.gram}>{Math.round(weight)} g</span>
       <span className={css.kcal}>{Math.round(kcal)} kcal</span>

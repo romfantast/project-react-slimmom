@@ -1,12 +1,12 @@
 .modalAdd {
   padding: 80px 20px 180px 20px;
-  background-color: rgb(253, 229, 229);
-  position: fixed;
-  width: 100vw;
+  background-color: inherit;
+  position: relative;
   height: 230px;
   top: 85px;
   left: 0;
-  z-index: 10;
+  margin-top: -145px;
+  /* z-index: 10; */
   overflow: scroll;
 }
 
@@ -64,6 +64,9 @@
 }
 
 .searchedProductsList {
-  max-height: 200px;
+  max-height: 120px;
   overflow-y: scroll;
+}
+.positionWrapper {
+  margin-bottom: 30px;
 }

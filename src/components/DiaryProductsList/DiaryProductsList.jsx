@@ -8,18 +8,16 @@ function DiaryProductsList({ startDate }) {
 
   return (
     <ul className={css.productsList}>
-      {eatenProducts?.length ? (
-        eatenProducts.map(product => (
-          <DiaryProductsListItem
-            key={product.id}
-            product={product}
-            id={product.id}
-            startDate={startDate}
-          />
-        ))
-      ) : (
-        <p>no products</p>
-      )}
+      {eatenProducts?.length
+        ? eatenProducts.map(product => (
+            <DiaryProductsListItem
+              key={product.id}
+              product={product}
+              id={product.id}
+              startDate={startDate}
+            />
+          ))
+        : null}
     </ul>
   );
 }
