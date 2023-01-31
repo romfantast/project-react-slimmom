@@ -19,6 +19,7 @@
 .container {
    display: flex;
    justify-content: space-between;
+   margin-top: 86px;
   }
   .bottomWrapper {
     max-width: 300px;
