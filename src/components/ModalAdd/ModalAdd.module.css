@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   max-width: 280px;
+  padding: 10px;
 }
 
 .mobileFormAdd input {
@@ -59,13 +60,15 @@
   letter-spacing: 0.04em;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 auto;
-  margin: 60px auto;
+  margin: 60px auto 20px auto;
 }
 
 .searchedProductsList {
+  border-radius: 8px;
+  padding: 10px;
   max-height: 120px;
   overflow-y: scroll;
+  background-color: #d5d5d5;
 }
 .positionWrapper {
   margin-bottom: 30px;
