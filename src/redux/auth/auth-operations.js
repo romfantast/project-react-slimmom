@@ -43,8 +43,8 @@ const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-export const refreshUserThunk = createAsyncThunk(
-  'auth/refreshUserThunk',
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
   async (_, thunkAPI) => {
     const savedToken = thunkAPI.getState();
     const persistedToken = savedToken.auth.refreshToken;
@@ -56,7 +56,7 @@ export const refreshUserThunk = createAsyncThunk(
     token.set(persistedToken);
 
     try {
-      const { data } = await API.refreshRequest(sid);
+      const { data } = await API.refresh(sid);
       token.set(data.newAccessToken);
       return data;
     } catch (error) {
@@ -65,5 +65,5 @@ export const refreshUserThunk = createAsyncThunk(
   }
 );
 
-const authOperations = { register, login, logout, refreshUserThunk };
+const authOperations = { register, login, logout, refreshUser };
 export default authOperations;

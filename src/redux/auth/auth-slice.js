@@ -67,11 +67,11 @@ const authSlice = createSlice({
         state.status = fetchStatus.rejected;
         state.token = null;
       })
-      .addCase(authOperations.refreshUserThunk.pending, state => {
+      .addCase(authOperations.refreshUser.pending, state => {
         state.isFetched = false;
         state.error = '';
       })
-      .addCase(authOperations.refreshUserThunk.fulfilled, (state, action) => {
+      .addCase(authOperations.refreshUser.fulfilled, (state, action) => {
         state.token = action.payload.newAccessToken;
         state.refreshToken = action.payload.newRefreshToken;
         state.sid = action.payload.sid;
@@ -80,7 +80,7 @@ const authSlice = createSlice({
         state.isAuth = true;
         state.isFetched = true;
       })
-      .addCase(authOperations.refreshUserThunk.rejected, (state, action) => {
+      .addCase(authOperations.refreshUser.rejected, (state, action) => {
         state.isFetched = false;
       });
   },

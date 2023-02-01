@@ -17,7 +17,6 @@ function DiaryPage() {
 
   useEffect(() => {
     const date = startDate.toLocaleDateString('en-CA');
-    console.log(date);
     dispatch(infoUser({ date }));
   }, [dispatch, startDate]);
 

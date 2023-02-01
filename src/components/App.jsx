@@ -20,7 +20,7 @@ export const App = () => {
 
   useEffect(() => {
     if (isAuth) {
-      dispatch(authOperations.refreshUserThunk()).then(() =>
+      dispatch(authOperations.refreshUser()).then(() =>
         dispatch(userOperations.current())
       );
     }

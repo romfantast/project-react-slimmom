@@ -42,7 +42,7 @@ const deleteEatenProduct = async deleteData => {
   return await axios.delete('/day', { data: deleteData });
 };
 
-const refreshRequest = async sid => {
+const refresh = async sid => {
   return await axios.post('/auth/refresh', { sid });
 };
 
@@ -56,6 +56,6 @@ const API = {
   searchProducts,
   addEatenProduct,
   deleteEatenProduct,
-  refreshRequest,
+  refresh,
 };
 export default API;
