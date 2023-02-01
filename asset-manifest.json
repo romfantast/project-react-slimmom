@@ -1,13 +1,29 @@
 {
   "files": {
-    "main.css": "/project-react-slimmom/static/css/main.d0624075.css",
-    "main.js": "/project-react-slimmom/static/js/main.890a3bd5.js",
+    "main.css": "/project-react-slimmom/static/css/main.80a86d2a.css",
+    "main.js": "/project-react-slimmom/static/js/main.27300eb4.js",
+    "static/css/275.81d9a609.chunk.css": "/project-react-slimmom/static/css/275.81d9a609.chunk.css",
+    "static/js/275.2f3e8212.chunk.js": "/project-react-slimmom/static/js/275.2f3e8212.chunk.js",
+    "static/css/268.10d33a64.chunk.css": "/project-react-slimmom/static/css/268.10d33a64.chunk.css",
+    "static/js/268.ce79a051.chunk.js": "/project-react-slimmom/static/js/268.ce79a051.chunk.js",
+    "static/css/143.ee97065c.chunk.css": "/project-react-slimmom/static/css/143.ee97065c.chunk.css",
+    "static/js/143.bc3feb7b.chunk.js": "/project-react-slimmom/static/js/143.bc3feb7b.chunk.js",
+    "static/media/fruitsDesktop.png": "/project-react-slimmom/static/media/fruitsDesktop.476199c0a69eb33bc650.png",
+    "static/media/fruitsTablet.png": "/project-react-slimmom/static/media/fruitsTablet.1c423c61002d6bb936cc.png",
+    "static/media/leafsDesktop.png": "/project-react-slimmom/static/media/leafsDesktop.032a3bee9ac1dc9057be.png",
+    "static/media/leafsTablet.png": "/project-react-slimmom/static/media/leafsTablet.d09141402614a67df357.png",
     "index.html": "/project-react-slimmom/index.html",
-    "main.d0624075.css.map": "/project-react-slimmom/static/css/main.d0624075.css.map",
-    "main.890a3bd5.js.map": "/project-react-slimmom/static/js/main.890a3bd5.js.map"
+    "main.80a86d2a.css.map": "/project-react-slimmom/static/css/main.80a86d2a.css.map",
+    "main.27300eb4.js.map": "/project-react-slimmom/static/js/main.27300eb4.js.map",
+    "275.81d9a609.chunk.css.map": "/project-react-slimmom/static/css/275.81d9a609.chunk.css.map",
+    "275.2f3e8212.chunk.js.map": "/project-react-slimmom/static/js/275.2f3e8212.chunk.js.map",
+    "268.10d33a64.chunk.css.map": "/project-react-slimmom/static/css/268.10d33a64.chunk.css.map",
+    "268.ce79a051.chunk.js.map": "/project-react-slimmom/static/js/268.ce79a051.chunk.js.map",
+    "143.ee97065c.chunk.css.map": "/project-react-slimmom/static/css/143.ee97065c.chunk.css.map",
+    "143.bc3feb7b.chunk.js.map": "/project-react-slimmom/static/js/143.bc3feb7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0624075.css",
-    "static/js/main.890a3bd5.js"
+    "static/css/main.80a86d2a.css",
+    "static/js/main.27300eb4.js"
   ]
 }
