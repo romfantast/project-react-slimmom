@@ -1,0 +1,12 @@
+.bgDesktop {
+  background-image: url('../../images/fruits/fruitsDesktop.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+}
+.bgTablet {
+  background-image: url('../../images/fruits/fruitsTablet.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+}

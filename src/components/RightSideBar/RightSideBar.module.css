@@ -2,41 +2,46 @@
   padding: 40px 20px;
   background-color: #f0f1f3;
   position: relative;
-  height: 100vh;
+  height: 350px;
   z-index: -10;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
- 
+
   color: #9b9faa;
 }
 @media screen and (max-width: 767px) {
-  .container{
+  .container {
     margin-top: 86px;
   }
 }
-@media screen and  (min-width: 600px) and (max-width: 1280px)  {
-.container {
-   display: flex;
-   justify-content: space-between;
-   margin-top: 86px;
+@media screen and (min-width: 600px) and (max-width: 1280px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 86px;
+    background-image: url('../../images/fruits/leafsTablet.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 350px;
   }
   .bottomWrapper {
     max-width: 300px;
     margin-left: auto;
   }
-
 }
 
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
   .container {
+    height: 100vh;
     margin-top: -335px;
     padding-top: 335px;
     min-width: 520px;
+    background-image: url('../../images/fruits/leafsDesktop.png');
+    background-repeat: no-repeat;
+    background-position: right;
   }
-  
 }
-
 
 .notAllowedProductsList {
   display: flex;

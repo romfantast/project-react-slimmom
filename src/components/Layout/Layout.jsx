@@ -1,13 +1,17 @@
 import Header from 'components/Header/Header';
-import React from 'react';
+import Loader from 'components/Loader/Loader';
+import MainPage from 'pages/MainPage/MainPage';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
 
 function Layout() {
   return (
-    <>
+    <MainPage>
       <Header />
-      <Outlet />
-    </>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </MainPage>
   );
 }
 

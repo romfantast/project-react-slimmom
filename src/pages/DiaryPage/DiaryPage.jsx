@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import DiaryDateСalendar from 'components/DiaryDateСalendar/DiaryDateСalendar';
 import DiaryAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
@@ -73,12 +73,13 @@ function DiaryPage() {
               <DiaryAddProductForm startDate={startDate} />
             </>
           )}
-
-          {!showMobileModalAdd && (
-            <DiaryProductsList
-              startDate={startDate.toLocaleDateString('en-CA')}
-            />
-          )}
+          <Suspense fallback={null}>
+            {!showMobileModalAdd && (
+              <DiaryProductsList
+                startDate={startDate.toLocaleDateString('en-CA')}
+              />
+            )}
+          </Suspense>
 
           {!isNotMobile && !showMobileModalAdd && (
             <button className={css.addBtn} onClick={handleClickOpen}>
