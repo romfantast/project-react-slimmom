@@ -9,18 +9,29 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectToken } from 'redux/auth/auth-selectors';
+import { selectIsAuth } from 'redux/auth/auth-selectors';
 import userOperations from 'redux/user/user-operations';
+import authOperations from 'redux/auth/auth-operations';
 
 export const App = () => {
+  const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
-  const token = useSelector(selectToken);
+  //   const token = useSelector(selectToken);
 
   useEffect(() => {
-    if (token) {
-      dispatch(userOperations.current());
+    if (isAuth) {
+      dispatch(authOperations.refreshUserThunk()).then(() =>
+        dispatch(userOperations.current())
+      );
     }
-  }, [dispatch, token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth]);
+
+  //   useEffect(() => {
+  //     if (token) {
+  //       dispatch(userOperations.current());
+  //     }
+  //   }, [dispatch, token]);
 
   return (
     <Routes>

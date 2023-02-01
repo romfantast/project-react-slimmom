@@ -66,6 +66,22 @@ const authSlice = createSlice({
       .addCase(authOperations.logout.rejected, (state, _) => {
         state.status = fetchStatus.rejected;
         state.token = null;
+      })
+      .addCase(authOperations.refreshUserThunk.pending, state => {
+        state.isFetched = false;
+        state.error = '';
+      })
+      .addCase(authOperations.refreshUserThunk.fulfilled, (state, action) => {
+        state.token = action.payload.newAccessToken;
+        state.refreshToken = action.payload.newRefreshToken;
+        state.sid = action.payload.sid;
+        state.error = '';
+
+        state.isAuth = true;
+        state.isFetched = true;
+      })
+      .addCase(authOperations.refreshUserThunk.rejected, (state, action) => {
+        state.isFetched = false;
       });
   },
 });
@@ -73,7 +89,7 @@ const authSlice = createSlice({
 const persistConfigAuth = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['refreshToken', 'isAuth', 'user', 'sid', 'token'],
 };
 
 export const authReducer = persistReducer(persistConfigAuth, authSlice.reducer);

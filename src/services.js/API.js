@@ -42,6 +42,10 @@ const deleteEatenProduct = async deleteData => {
   return await axios.delete('/day', { data: deleteData });
 };
 
+const refreshRequest = async sid => {
+  return await axios.post('/auth/refresh', { sid });
+};
+
 const API = {
   register,
   login,
@@ -52,5 +56,6 @@ const API = {
   searchProducts,
   addEatenProduct,
   deleteEatenProduct,
+  refreshRequest,
 };
 export default API;
