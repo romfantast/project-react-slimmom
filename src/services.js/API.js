@@ -34,12 +34,10 @@ const searchProducts = async search => {
   return await axios.get(`/product/?search=${search}`);
 };
 
-// Post an eaten product
 const addEatenProduct = async params => {
   return await axios.post('/day', params);
 };
 
-// Delete eaten product
 const deleteEatenProduct = async deleteData => {
   return await axios.delete('/day', { data: deleteData });
 };
