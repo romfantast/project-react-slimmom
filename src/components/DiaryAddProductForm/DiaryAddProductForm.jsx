@@ -54,6 +54,7 @@ function DiaryAddProductForm({ startDate }) {
       console.log(error);
     }
   };
+
   return (
     <div className={css.block}>
       <form className={css.diaryForm} onSubmit={handleSubmit}>
