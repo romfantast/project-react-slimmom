@@ -46,9 +46,9 @@ const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkAPI) => {
-    const savedToken = thunkAPI.getState();
-    const persistedToken = savedToken.auth.refreshToken;
-    const sid = savedToken.auth.sid;
+    const store = thunkAPI.getState();
+    const persistedToken = store.auth.refreshToken;
+    const sid = store.auth.sid;
 
     if (persistedToken === '') {
       return thunkAPI.rejectWithValue('Unable to fetch user');
