@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkproject_react_slimmom=self.webpackChunkproject_react_slimmom||[]).push([[275],{8275:function(e,r,c){c.r(r),c.d(r,{default:function(){return i}});c(2791);var n=c(2574),s=c(6475),t="CalculatorPage_flexContainer__eY4Ae",a=c(184);var i=function(){return(0,a.jsx)("section",{children:(0,a.jsxs)("div",{className:t,children:[(0,a.jsx)(n.Z,{}),(0,a.jsx)(s.Z,{})]})})}}}]);
-//# sourceMappingURL=275.2f3e8212.chunk.js.map
