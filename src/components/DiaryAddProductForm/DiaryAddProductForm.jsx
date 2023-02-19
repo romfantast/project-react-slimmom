@@ -4,6 +4,7 @@ import API from 'services.js/API';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { infoUser } from 'redux/info/info-operations';
+import normalizedDate from 'helpers/normalizedDate';
 
 function DiaryAddProductForm({ startDate }) {
   const [searchedProducts, setSearchedProducts] = useState([]);
@@ -49,7 +50,11 @@ function DiaryAddProductForm({ startDate }) {
     };
     try {
       await API.addEatenProduct(productData);
-      dispatch(infoUser({ date: startDate.toLocaleDateString('en-CA') }));
+      dispatch(
+        infoUser({
+          date: normalizedDate(startDate.toLocaleDateString('en-CA')),
+        })
+      );
     } catch (error) {
       console.log(error);
     }

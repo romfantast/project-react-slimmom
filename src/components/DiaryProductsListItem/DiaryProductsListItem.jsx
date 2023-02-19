@@ -3,6 +3,7 @@ import css from './DiaryProductsListItem.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import API from 'services.js/API';
 import { infoUser } from 'redux/info/info-operations';
+import normalizedDate from 'helpers/normalizedDate';
 
 function DiaryProductsListItem({
   product: { title, weight, kcal, id },
@@ -15,7 +16,7 @@ function DiaryProductsListItem({
     const deleteData = { eatenProductId: id, dayId };
     try {
       await API.deleteEatenProduct(deleteData);
-      dispatch(infoUser({ date: startDate }));
+      dispatch(infoUser({ date: normalizedDate(startDate) }));
     } catch (error) {
       console.log(error);
     }

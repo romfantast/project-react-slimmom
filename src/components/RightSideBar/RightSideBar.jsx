@@ -5,10 +5,8 @@ import css from './RightSideBar.module.css';
 import { selectDailyRateUserId } from 'redux/dailyDateUserId/dailyDateUserId-selectors';
 
 import { selectNotAllowedProducts } from 'redux/user/user-selectors';
-// import { useEffect } from 'react';
-// import { infoUser } from 'redux/info/info-operations';
-// const TODAY = new Date().toLocaleDateString('en-CA');
-// import { useDispatch } from 'react-redux';
+import normalizedDate from 'helpers/normalizedDate';
+import { normalizedDateRightSideBar } from 'helpers/normalizedDateRightSideBar';
 
 function RightSideBar({ startDate }) {
   const dailyRate = useSelector(
@@ -28,17 +26,20 @@ function RightSideBar({ startDate }) {
   );
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
   const dailyRateUserId = useSelector(selectDailyRateUserId);
-  //   const dispatch = useDispatch();
 
-  //   useEffect(() => {
-  //     dispatch(infoUser({ date: TODAY }));
-  //   }, [dispatch]);
+  const defaultDate = normalizedDate(new Date().toLocaleDateString('en-CA'));
 
   return (
     <div className={css.container}>
       <div className={css.topWrapper}>
         <h3 className={css.title}>
-          Summary for {startDate || new Date().toLocaleDateString('en-CA')}
+          Summary for{' '}
+          {normalizedDateRightSideBar(
+            startDate?.split('-').reverse().join('.')
+          ) ||
+            normalizedDateRightSideBar(
+              defaultDate.split('-').reverse().join('.')
+            )}
         </h3>
         <p>
           <span>Left</span> <span>{Math.round(kcalLeft) || '0'} kcal</span>

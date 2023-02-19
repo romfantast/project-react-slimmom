@@ -1,4 +1,5 @@
 import axios from 'axios';
+import normalizedDate from 'helpers/normalizedDate';
 
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 
@@ -35,7 +36,8 @@ const searchProducts = async search => {
 };
 
 const addEatenProduct = async params => {
-  return await axios.post('/day', params);
+  const newDate = { ...params, date: normalizedDate(params.date) };
+  return await axios.post('/day', newDate);
 };
 
 const deleteEatenProduct = async deleteData => {

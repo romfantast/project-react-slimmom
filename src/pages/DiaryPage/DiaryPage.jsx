@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { infoUser } from 'redux/info/info-operations';
 import { useMediaQuery } from 'react-responsive';
 import ModalAdd from '../../components/ModalAdd/ModalAdd';
+import normalizedDate from 'helpers/normalizedDate';
 
 function DiaryPage() {
   const [startDate, setStartDate] = useState(new Date());
@@ -17,10 +18,10 @@ function DiaryPage() {
 
   useEffect(() => {
     const date = startDate.toLocaleDateString('en-CA');
-    dispatch(infoUser({ date }));
+    dispatch(infoUser({ date: normalizedDate(date) }));
   }, [dispatch, startDate]);
 
-  const normalizedDate = startDate
+  const normalizedDateStr = startDate
     .toLocaleDateString('en-GB')
     .replaceAll('/', '.');
 
@@ -38,7 +39,7 @@ function DiaryPage() {
       <div className={css.flexContainer}>
         <div className={css.leftWrapper}>
           <div className={css.dateWrapper}>
-            <span className={css.date}>{normalizedDate}</span>
+            <span className={css.date}>{normalizedDateStr}</span>
             <label className={css.datePickerWrapper}>
               <svg
                 width="25"
@@ -87,7 +88,9 @@ function DiaryPage() {
             </button>
           )}
         </div>
-        <RightSideBar startDate={normalizedDate} />
+        <RightSideBar
+          startDate={normalizedDate(startDate.toLocaleDateString('en-CA'))}
+        />
       </div>
     </section>
   );
