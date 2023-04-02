@@ -28,18 +28,17 @@ function RightSideBar({ startDate }) {
   const dailyRateUserId = useSelector(selectDailyRateUserId);
 
   const defaultDate = normalizedDate(new Date().toLocaleDateString('en-CA'));
-
   return (
     <div className={css.container}>
       <div className={css.topWrapper}>
         <h3 className={css.title}>
-          Summary for{' '}
-          {normalizedDateRightSideBar(
+          Summary for {startDate || defaultDate}
+          {/* {normalizedDateRightSideBar(
             startDate?.split('-').reverse().join('.')
           ) ||
             normalizedDateRightSideBar(
               defaultDate.split('-').reverse().join('.')
-            )}
+            )} */}
         </h3>
         <p>
           <span>Left</span> <span>{Math.round(kcalLeft) || '0'} kcal</span>

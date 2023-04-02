@@ -28,6 +28,7 @@ const dailyRateUserId = async userDataWithId => {
 };
 
 const getInfoForDay = async date => {
+  console.log(date);
   return await axios.post('/day/info', date);
 };
 
@@ -36,8 +37,7 @@ const searchProducts = async search => {
 };
 
 const addEatenProduct = async params => {
-  const newDate = { ...params, date: normalizedDate(params.date) };
-  return await axios.post('/day', newDate);
+  return await axios.post('/day', params);
 };
 
 const deleteEatenProduct = async deleteData => {

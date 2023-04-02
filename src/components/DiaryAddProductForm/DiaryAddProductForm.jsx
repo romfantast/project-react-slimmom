@@ -52,7 +52,7 @@ function DiaryAddProductForm({ startDate }) {
       await API.addEatenProduct(productData);
       dispatch(
         infoUser({
-          date: normalizedDate(startDate.toLocaleDateString('en-CA')),
+          date: startDate.toLocaleDateString('en-CA'),
         })
       );
     } catch (error) {

@@ -16,7 +16,8 @@ function DiaryProductsListItem({
     const deleteData = { eatenProductId: id, dayId };
     try {
       await API.deleteEatenProduct(deleteData);
-      dispatch(infoUser({ date: normalizedDate(startDate) }));
+      console.log(startDate);
+      dispatch(infoUser({ date: startDate }));
     } catch (error) {
       console.log(error);
     }

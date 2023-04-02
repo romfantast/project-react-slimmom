@@ -57,7 +57,7 @@ function CalculatorСalorieForm() {
         id,
       };
       dispatch(dailyRateUserId(userDataWithId)).then(() =>
-        dispatch(infoUser({ date: normalizedDate(TODAY) }))
+        dispatch(infoUser({ date: TODAY }))
       );
     } else {
       dispatch(dailyRate(userData)).then(() => {
