@@ -4,7 +4,6 @@ import { infoUser } from 'redux/info/info-operations';
 import API from 'services.js/API';
 
 import css from './ModalAdd.module.css';
-import normalizedDate from 'helpers/normalizedDate';
 
 function ModalAdd({ setShowMobileModalAdd, startDate, handleClickClose }) {
   const [searchedProducts, setSearchedProducts] = useState([]);
@@ -56,7 +55,7 @@ function ModalAdd({ setShowMobileModalAdd, startDate, handleClickClose }) {
       await API.addEatenProduct(productData);
       dispatch(
         infoUser({
-          date: normalizedDate(startDate.toLocaleDateString('en-CA')),
+          date: startDate.toLocaleDateString('en-CA'),
         })
       );
     } catch (error) {

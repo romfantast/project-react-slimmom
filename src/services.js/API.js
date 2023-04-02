@@ -1,5 +1,4 @@
 import axios from 'axios';
-import normalizedDate from 'helpers/normalizedDate';
 
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 

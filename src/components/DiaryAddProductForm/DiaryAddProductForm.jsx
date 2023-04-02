@@ -4,7 +4,6 @@ import API from 'services.js/API';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { infoUser } from 'redux/info/info-operations';
-import normalizedDate from 'helpers/normalizedDate';
 
 function DiaryAddProductForm({ startDate }) {
   const [searchedProducts, setSearchedProducts] = useState([]);
